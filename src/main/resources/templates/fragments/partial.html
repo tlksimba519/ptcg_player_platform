@@ -1,0 +1,10 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="block(yield)">
+  <div th:replace="~{sbu/web/alert :: bs5}"></div>
+  <div th:replace="~{sbu/web/model :: bs5}"></div>
+
+  <th:block th:replace="${yield}"></th:block>
+</div>
+
+</html>

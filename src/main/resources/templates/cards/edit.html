@@ -1,0 +1,10 @@
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layouts/bs5 :: main(~{:: section})}"
+  th:fragment="complete">
+
+<section th:replace="~{fragments/partial :: block(~{:: div})}" th:fragment="partial">
+
+  <div th:replace="~{sbu/jsf/edit :: bs5}"></div>
+
+</section>
+
+</html>

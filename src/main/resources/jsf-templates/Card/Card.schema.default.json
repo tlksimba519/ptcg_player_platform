@@ -1,0 +1,128 @@
+{
+    "title": "Card",
+    "type": "object",
+    "required": [
+      "cardType",
+      "cardNo",
+      "cardName",
+      "cardDesc"
+    ],
+    "properties": {
+      "cardType": {
+        "type": "string"
+      },
+      "cardNo": {
+        "type": "string"
+      },
+      "cardName": {
+        "type": "string"
+      },
+      "cardDesc": {
+        "type": "string"
+      },
+      "img": {
+        "type": "string",
+        "format": "data-url"
+      }
+    },
+    "anyOf": [
+      {
+        "title": "Pokemon",
+        "required": [
+          "pokemonType",
+          "evolveStage",
+          "retreatCost",
+          "skill1"
+        ],
+        "properties": {
+          "pokemonType": {
+            "type": "string",
+            "title": "pokemonType"
+          },
+          "evolveStage": {
+            "type": "string",
+            "title": "evolveStage"
+          },
+          "weakness": {
+            "type": "string",
+            "title": "weakness"
+          },
+          "resistance": {
+            "type": "string",
+            "title": "resistance"
+          },
+          "resistancePoint": {
+            "type": "integer",
+            "title": "resistancePoint"
+          },
+          "retreatCost": {
+            "type": "integer",
+            "title": "retreatCost"
+          },
+          "ability": {
+            "type": "boolean",
+            "title": "ability"
+          },
+          "abilityDesc": {
+            "type": "string",
+            "title": "abilityDesc"
+          },
+          "skill1": {
+            "type": "string",
+            "title": "skill1"
+          },
+          "skill1Danmage": {
+            "type": "integer",
+            "title": "skill1Danmage"
+          },
+          "skill1Desc": {
+            "type": "string",
+            "title": "skill1Desc"
+          },
+          "skill2": {
+            "type": "string",
+            "title": "skill2"
+          },
+          "skill2Danmage": {
+            "type": "integer",
+            "title": "skill2Danmage"
+          },
+          "skill2Desc": {
+            "type": "string",
+            "title": "skill2Desc"
+          }
+        }
+      },
+      {
+        "title": "Item",
+        "properties": {
+          "aceSpec": {
+            "type": "boolean",
+            "title": "aceSpec"
+          }
+        }
+      },
+      {
+        "title": "Supporter",
+        "properties": {}
+      },
+      {
+        "title": "Stadium",
+        "properties": {
+          "aceSpec": {
+            "type": "boolean",
+            "title": "aceSpec"
+          }
+        }
+      },
+      {
+        "title": "Energy",
+        "properties": {
+          "aceSpec": {
+            "type": "boolean",
+            "title": "aceSpec"
+          }
+        }
+      }
+    ]
+  }

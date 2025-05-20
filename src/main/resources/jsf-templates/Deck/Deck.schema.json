@@ -1,0 +1,27 @@
+{
+  "title": "Deck",
+  "type": "object",
+  "required": [
+    "deckNo",
+    "deckName",
+    "deckDesc"
+  ],
+  "properties": {
+    "deckNo": {
+      "type": "string"
+    },
+    "deckName": {
+      "type": "string"
+    },
+    "deckDesc": {
+      "type": "string"
+    },
+    "cards": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    }
+  }
+}

@@ -1,0 +1,40 @@
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layouts/bs5 :: main(~{:: section})}"
+  th:fragment="complete">
+
+<section th:replace="~{fragments/partial :: block(~{:: div})}" th:fragment="partial">
+
+  <div th:replace="~{sbu/web/datatable :: bs5(~{:: th}, ~{:: td})}">
+    <th scope="col">
+      <a class="sorted text-nowrap" sd:pagination-sort="deckNo"
+        sd:pagination-url="@{${route.sortingPath(queryConfig)}}">
+        [[${@sbuHtml.fieldDisplay(itemClass, 'deckNo')}]]
+      </a>
+    </th>
+    <th scope="col">
+      <a class="sorted text-nowrap" sd:pagination-sort="deckName"
+        sd:pagination-url="@{${route.sortingPath(queryConfig)}}">
+        [[${@sbuHtml.fieldDisplay(itemClass, 'deckName')}]]
+      </a>
+    </th>
+    <th scope="col">
+      <a class="sorted text-nowrap" sd:pagination-sort="deckDesc"
+        sd:pagination-url="@{${route.sortingPath(queryConfig)}}">
+        [[${@sbuHtml.fieldDisplay(itemClass, 'deckDesc')}]]
+      </a>
+    </th>
+    <th scope="col">
+      <a class="sorted text-nowrap" sd:pagination-sort="cards"
+        sd:pagination-url="@{${route.sortingPath(queryConfig)}}">
+        [[${@sbuHtml.fieldDisplay(itemClass, 'cards')}]]
+      </a>
+    </th>
+    
+    <td class="align-middle">[[${item.deckNo}]]</td>
+    <td class="align-middle">[[${item.deckName}]]</td>
+    <td class="align-middle">[[${item.deckDesc}]]</td>
+    <td class="align-middle">[[${#strings.listJoin(item.cards.![cardName], ', ')}]]</td>
+  </div>
+
+</section>
+
+</html>

@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layouts/bs5 :: main(~{:: section})}"
+  th:fragment="complete">
+
+  <style>
+    .card-img-top {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 63 / 88;
+    }
+    .card-body {
+        padding-top: 0; /* 移除 body 顶部的 padding */
+    }
+</style>
+
+<section th:replace="~{fragments/partial :: block(~{:: div})}" th:fragment="partial">
+
+    <div class="container mt-5">
+        <button th:text="#{addCard}" class="btn btn-primary" onclick="window.location.href='http://localhost:8080/cards/new'">
+            Add card
+        </button>
+    </div>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="col" th:each="item : ${page}">
+        <div class="card h-100">
+            <img th:src="${item.img}" class="card-img-top" alt="Card image">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <p th:utext="${item.cardName}"></p>
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted" th:utext="${item.cardType}"></h6>
+                <p class="card-text">
+                    <strong th:text="#{cardNo}">Card No: </strong><span th:text="${item.cardNo}"></span><br>
+                    <strong th:text="#{cardDesc}">Description: </strong><span th:text="${item.cardDesc}"></span><br>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</section>
+
+</html>
